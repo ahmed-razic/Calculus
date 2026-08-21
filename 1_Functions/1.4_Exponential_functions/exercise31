@@ -1,0 +1,25 @@
+f1(x) = 6.6*(0.5)**(x/14)
+yval = 1
+
+g(x) = f1(x0) - yval
+
+set terminal qt 0
+set grid
+set xtics 5
+set xrange [-3:50]
+set samples 2000
+set size ratio 1
+
+x0 = 38.0
+
+fit g(x) '++' using (0):(0) via x0
+
+print sprintf("Solution: x=%.5f", x0)
+
+set label sprintf("f(x)=%.2f at x=%.2f", yval, x0) at x0, yval offset 1,1
+set object circle at x0,f1(x0) size 0.3 fc rgb "red"
+
+# Plot function and overlay just one point
+plot f1(x) with lines lw 1 title "6.6*(0.5)**(x/14.0)"
+
+pause -1;

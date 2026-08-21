@@ -1,0 +1,37 @@
+#Define a function
+f1(x) = 2**x
+f2(x) = 3**x
+f3(x) = 5**x
+
+f4(x) = log(x)/log(2)
+f5(x) = log(x)/log(3)
+f6(x) = log(x)/log(5)
+
+f7(x) = log(x)
+f8(x) = exp(1)**x
+
+
+set terminal qt 0
+set xlabel "x"
+set ylabel "f(x)"
+set xtics 1
+set ytics 1
+set grid
+set size ratio 1
+set xrange [-5:5]
+set yrange [-5:5]
+set arrow nohead from -5,0 to 5,0 dashtype 7 lc "green"
+set arrow nohead from 0, -5 to 0, 5 dashtype 7 lc "green"
+
+plot f1(x) with lines title "2^x", \
+f2(x) with lines title "3^x", \
+f3(x) with lines title "5^x", \
+f4(x) with lines title "log(x)/log(2)", \
+f5(x) with lines title "log(x)/log(3)", \
+f6(x) with lines title "log(x)/log(5)", \
+f7(x) with lines title "ln(x)" lw 3 lc "black", \
+f8(x) with lines title "e^x" lw 3 lc "black"
+
+pause -1
+
+#EOF
