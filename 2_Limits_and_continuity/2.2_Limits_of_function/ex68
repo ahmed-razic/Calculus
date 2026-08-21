@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+printf "%-14s %s\n" "x" "f(x)"
+printf '%s\n' "-------------------------------"
+
+for n in {1..10}
+do
+	x=$(printf '%s\n' 'scale=30; sqrt(2)' | bc -l | cut -c "1-$((n + 2))")
+	fx=$(printf '%s\n' "scale=30; ($x^2 - 2) / ($x - sqrt(2))" | bc -l)
+	printf "%-15s %.10f\n" "$x" "$fx"
+done
