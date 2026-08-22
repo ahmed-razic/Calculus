@@ -1,3 +1,6 @@
+set terminal pngcairo size 900,650
+set output "ex69_graph.png"
+
 f(x) = (x == -6 ? 1/0 : (x + 6)/(x**2 + 4*x - 12))
 
 set title "G(x) = (x + 6) / (x^2 + 4x - 12) near x = -6"

@@ -1,0 +1,20 @@
+set terminal pngcairo size 900,650
+set output "ex71_graph.png"
+
+h(x) = (x == 3 ? 1/0 : (x**2 - 2*x - 3)/(x**2 - 4*x + 3))
+
+set title "H(x) = (x^2 - 2x - 3) / (x^2 - 4x + 3) near x = 3"
+set xlabel "x"
+set ylabel "H(x)"
+set xrange [2.9:3.1]
+set yrange [1.9:2.1]
+set sample 1000
+set grid
+set arrow nohead from 3,1.9 to 3,2.1 dt 2 lc rgb "red"
+set label "x = 3" at 3.005,2.095 left tc rgb "red"
+
+plot h(x) with lines lw 2 title "H(x)", \
+     "-" using 1:2 with points pt 6 ps 0.8 lc rgb "red" title "limit point"
+3 2
+
+e

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+printf '%-10s %-16s %-20s\n' 'Iteration' 'x' 'F(x)'
+printf '%-10s %-16s %-20s\n' '---------' '----------------' '--------------------'
+
+awk '
+BEGIN {
+	for (iteration = 1; iteration <= 10; iteration++) {
+		delta = 10^(-iteration)
+		x = -1 - delta
+		value = 1 - x
+		printf "%-10d %-16.10f %-20.12f\n", iteration, x, value
+	}
+}
+'
