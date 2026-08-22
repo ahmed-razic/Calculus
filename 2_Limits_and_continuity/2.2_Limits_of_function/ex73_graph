@@ -1,0 +1,22 @@
+#!/usr/bin/env gnuplot
+
+set terminal pngcairo size 900,650
+set output "ex73_graph.png"
+
+f(x) = (x == 0 ? 1/0 : sin(x) / x)
+
+set title "g(x) = sin(x) / x near x = 0"
+set xlabel "x"
+set ylabel "g(x)"
+set xrange [-0.1:0.1]
+set yrange [0.998:1.001]
+set sample 1000
+set grid
+set arrow nohead from 0,0.998 to 0,1.001 dt 2 lc rgb "red"
+set label "x = 0" at 0.002,1.0008 left tc rgb "red"
+
+plot f(x) with lines lw 2 title "g(x)", \
+     "-" using 1:2 with points pt 6 ps 0.8 lc rgb "red" title "limit point"
+0 1
+
+e

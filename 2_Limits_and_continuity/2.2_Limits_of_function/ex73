@@ -1,0 +1,29 @@
+#!/bin/sh
+
+printf '%-10s %-16s %-20s\n' 'Iteration' 'x (below 0)' 'G(x)'
+printf '%-10s %-16s %-20s\n' '---------' '----------------' '--------------------'
+
+awk '
+BEGIN {
+	for (iteration = 1; iteration <= 10; iteration++) {
+		delta = 10^(-iteration)
+		x = -delta
+		value = sin(x) / x
+		printf "%-10d %-16.10f %-20.12f\n", iteration, x, value
+	}
+}
+'
+
+printf '\n%-10s %-16s %-20s\n' 'Iteration' 'x (above 0)' 'G(x)'
+printf '%-10s %-16s %-20s\n' '---------' '----------------' '--------------------'
+
+awk '
+BEGIN {
+	for (iteration = 1; iteration <= 10; iteration++) {
+		delta = 10^(-iteration)
+		x = delta
+		value = sin(x) / x
+		printf "%-10d %-16.10f %-20.12f\n", iteration, x, value
+	}
+}
+'
