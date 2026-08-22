@@ -1,0 +1,17 @@
+f(x) = (x == -6 ? 1/0 : (x + 6)/(x**2 + 4*x - 12))
+
+set title "G(x) = (x + 6) / (x^2 + 4x - 12) near x = -6"
+set xlabel "x"
+set ylabel "G(x)"
+set xrange [-6.1:-5.9]
+set yrange [-0.13:-0.12]
+set sample 1000
+set grid
+set arrow nohead from -6,-0.13 to -6,-0.12 dt 2 lc rgb "red"
+set label "x = -6" at -5.995,-0.1204 left tc rgb "red"
+
+plot f(x) with lines lw 2 title "G(x)", \
+     "-" using 1:2 with points pt 6 ps 0.8 lc rgb "red" title "limit point"
+-6 -0.125
+
+e
