@@ -2,7 +2,6 @@ set terminal qt
 
 f(x) = (x == 0 ? 1/0 : x*sin(1/x))
 g(x) = x
-h(x) = -x
 
 set title "f(x) = x sin(1/x)"
 set xlabel "x"
@@ -14,6 +13,6 @@ set grid
 
 plot f(x) with lines lw 2 title "x sin(1/x)", \
 	g(x) with lines lw 1 dt 2 lc rgb "red" title "x", \
-    h(x) with lines lw 1 dt 2 lc rgb "blue" title "-x"
+    -g(x) with lines lw 1 dt 2 lc rgb "blue" title "-x"
 
 pause -1
