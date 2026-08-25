@@ -1,0 +1,19 @@
+set terminal qt
+
+f(x) = (x == 3 ? 1/0 : (x**4 - 81)/(x - 3))
+g(x) = 108.05
+h(x) = 107.95
+
+set title "f(x) = (x**4 - 81)/(x - 3), near x = 3"
+set xlabel "x"
+set ylabel "y"
+set xrange [ 2.9999 : 3.0001]
+set yrange [107.9 : 108.1]
+set samples 5000
+set grid
+
+plot f(x) with lines lw 2 lc rgb "red" title "f(x) = (x**4 - 81)/(x - 3), near x = 3", \
+    g(x) with lines lw 1 dt 2 lc rgb "green", \
+    h(x) with lines lw 1 dt 2 lc rgb "green"
+
+pause -1
