@@ -7,8 +7,8 @@ h(x) = 107.95
 set title "f(x) = (x**4 - 81)/(x - 3), near x = 3"
 set xlabel "x"
 set ylabel "y"
-set xrange [ 2.9999 : 3.0001]
-set yrange [107.9 : 108.1]
+set xrange [ 2.999 : 3.001]
+#set yrange [107.9 : 108.1]
 set samples 5000
 set grid
 
