@@ -1,0 +1,23 @@
+set terminal qt
+
+f(x) = sqrt(1 - x**2)
+g(x) = 1
+h(x) = 2
+
+set title "Exercise 9"
+set xlabel "x"
+set ylabel "y"
+set yrange [-0.5:2.5]
+set sample 2000
+set grid
+
+plot [0:2] (x >= 0 && x < 1 ? f(x) : 1/0) with lines, \
+		   (x >= 1 && x < 2 ? g(x) : 1/0) with lines, \
+		   '-' with points pt 6 ps 0.8, \
+		   '-' with points pt 7 ps 0.8
+1 0
+e
+2 2
+e
+
+pause -1
