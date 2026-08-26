@@ -1,0 +1,23 @@
+set terminal qt
+
+f(x) = (x == 0 ? 1/0 : abs(sin(x))/x)
+
+set title "Exercise 19"
+set xlabel "x"
+set ylabel "f(x)"
+set xrange [-2*pi:2*pi]
+set yrange [-1.2:1.2]
+set xtics ("-2π" -2*pi, "-π" -pi, "0" 0, "π" pi, "2π" 2*pi)
+set sample 2000
+set grid
+
+plot (x < 0 ? f(x) : 1/0) with lines title "|sin(x)| / x", \
+	(x > 0 ? f(x) : 1/0) with lines notitle, \
+	'-' with points pt 6 ps 0.8 lc rgb "black" notitle, \
+	'-' with points pt 6 ps 0.8 lc rgb "black" notitle
+0 -1
+e
+0 1
+e
+
+pause -1
