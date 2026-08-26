@@ -18,9 +18,9 @@ plot [0:2.5] (x >= 0 && x < 1 ? f(x) : 1/0) with lines, \
 		   '-' with points pt 7 ps 0.8 lc rgb "black", \
 		   '-' with points pt 7 ps 0.8 lc rgb "black", \
 		   '-' with points pt 6 ps 0.8 lc rgb "black"
-1 0
+0 0
 e
-2 2
+1 0
 e
 1 1
 e
