@@ -1,0 +1,18 @@
+# Define the function
+f(x) = -sqrt(4 - x**2)
+
+set terminal wxt
+set xlabel "x"
+set ylabel "f(x) = -sqrt(4-x**2)"
+set xtics 1
+set ytics 1
+set grid
+set size ratio -1
+set xrange [-2:2]
+set yrange [-2:0]
+
+plot f(x) with lines title "f(x) = -sqrt(4-x**2)"
+
+pause -1
+
+# EOF
