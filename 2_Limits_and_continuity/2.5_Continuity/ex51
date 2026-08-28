@@ -1,0 +1,21 @@
+# gnuplot script for f(x) = (10^x - 1) / x on [-3, 3]
+
+set terminal wxt
+
+set grid
+set xlabel "x"
+set ylabel "f(x)"
+set title "f(x) = (10^x - 1)/x"
+set xrange [-0.1:0.1]
+set samples 1000
+
+# Keep the actual discontinuity at x = 0 by returning NaN there.
+f(x) = (abs(x) < 1e-8) ? NaN : ((10**x - 1) / x)
+
+# The hole is at (0, ln(10)), since the limit as x -> 0 is ln(10).
+plot f(x) with lines lw 2 lc rgb "blue" notitle, \
+     '-' using 1:2 with points pt 6 ps 1.2 lc rgb "red" notitle
+0  log(10)
+e
+
+pause -1
