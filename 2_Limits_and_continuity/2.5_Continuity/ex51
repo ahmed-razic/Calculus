@@ -13,10 +13,10 @@ set samples 2000
 # Leave the missing point at x = 0 undefined.
 f(x) = (abs(x) < 1e-8) ? NaN : ((10**x - 1) / x)
 
-# Mark the hole at (0, ln(10)) with an open circle.
-plot f(x) with lines lw 2 lc rgb "blue" notitle, \
-     '-' using 1:2 with points pt 7 ps 3 lc rgb "red" lw 2 notitle
-0  log(10)
-e
+# Draw a large open circle at the hole: (0, ln(10)).
+set object 1 circle at 0, log(10) radius 0.18
+set object 1 fc rgb "white" fs empty border lc rgb "red" lw 2
+
+plot f(x) with lines lw 2 lc rgb "blue" notitle
 
 pause -1
