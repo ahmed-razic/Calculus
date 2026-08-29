@@ -15,8 +15,8 @@ set samples 2000
 
 plot f_left(x) with lines lw 2 dt 2 lc rgb "red" title "sinx/x", \
     f_right(x) with lines lw 2 dt 2 lc rgb "red" notitle, \
-    g_left(x) with lines lw 2 lc rgb "blue" title "sinx/|x|", \
-    g_right(x) with lines lw 2 lc rgb "blue" notitle, \
+    g_left(x) with lines lw 2  dt 4 lc rgb "blue" title "sinx/|x|", \
+    g_right(x) with lines lw 2 dt 4 lc rgb "blue" notitle, \
     "-" using 1:2 with points pt 6 ps 1.5 lc rgb "blue" notitle
 0 -1
 0 1
