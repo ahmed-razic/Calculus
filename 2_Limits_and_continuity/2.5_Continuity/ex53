@@ -1,17 +1,26 @@
-f(x) = (x == 0 ? 1/0 : sin(x)/x)
-g(x) = (x == 0 ? 1/0 : sin(x)/abs(x))
+f_left(x) = x < 0 ? sin(x)/x : NaN
+f_right(x) = x > 0 ? sin(x)/x : NaN
+
+g_left(x) = x < 0 ? sin(x)/abs(x) : NaN
+g_right(x) = x > 0 ? sin(x)/abs(x) : NaN
 
 set terminal wxt
 set xlabel "x"
-set ylabel "f(x), g(x)
+set ylabel "f(x), g(x)"
 set grid
 set title "Find continuous extension"
 set xrange [-3*pi/2 : 3*pi/2]
 set yrange [-1.5: 1.5]
 set samples 2000
 
-plot f(x) with lines lw 2 dt 2 lc rgb "red" title "sinx/x", \
-    g(x) with lines lw 2 lc rgb "blue" title "sinx/|x|"
+plot f_left(x) with lines lw 2 dt 2 lc rgb "red" title "sinx/x", \
+    f_right(x) with lines lw 2 dt 2 lc rgb "red" notitle, \
+    g_left(x) with lines lw 2 lc rgb "blue" title "sinx/|x|", \
+    g_right(x) with lines lw 2 lc rgb "blue" notitle, \
+    "-" using 1:2 with points pt 6 ps 1.5 lc rgb "blue" notitle
+0 -1
+0 1
+e
 
 pause -1
 
