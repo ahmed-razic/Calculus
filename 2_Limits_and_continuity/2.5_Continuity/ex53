@@ -1,0 +1,18 @@
+f(x) = (x == 0 ? 1/0 : sin(x)/x)
+g(x) = (x == 0 ? 1/0 : sin(x)/abs(x))
+
+set terminal wxt
+set xlabel "x"
+set ylabel "f(x), g(x)
+set grid
+set title "Find continuous extension"
+set xrange [-3*pi/2 : 3*pi/2]
+set yrange [-1.5: 1.5]
+set samples 2000
+
+plot f(x) with lines lw 2 dt 2 lc rgb "red" title "sinx/x", \
+    g(x) with lines lw 2 lc rgb "blue" title "sinx/|x|"
+
+pause -1
+
+
