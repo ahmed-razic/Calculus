@@ -4,6 +4,6 @@ set samples 2000
 set xrange [-0.1:0.1]
 set grid
 
-plot f(x) with lines
+plot f(x) with lines notitle
 
 pause -1
