@@ -1,0 +1,14 @@
+f(x) = 2*sin(x) - x
+
+set terminal wxt
+
+set grid
+set xlabel "x"
+set ylabel "y"
+#set xrange [-3:3]
+#set yrange [0:4]
+set samples 2000
+
+plot f(x) with lines, -x with lines dt 2 lc rgb "red"
+
+pause -1
