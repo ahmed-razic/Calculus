@@ -1,0 +1,16 @@
+f(x) = 2*x**3
+g(x) = 2*x**2 +2*x - 1
+
+set terminal wxt
+
+set grid
+set xlabel "x"
+set ylabel "f(x), g(x)"
+set title "2*x**3 - 2*x**2 - 2*x + 1 = 0"
+set xrange [-3:3]
+#set yrange [0:4]
+set samples 2000
+
+plot f(x) with lines lc rgb "blue",  g(x) with lines lc rgb "red"
+
+pause -1
