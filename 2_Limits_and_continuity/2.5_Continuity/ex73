@@ -1,0 +1,16 @@
+f(x) = x**3
+g(x) = 3*x + 1
+
+set terminal wxt
+
+set grid
+set xlabel "x"
+set ylabel "f(x), g(x)"
+set title "x^3 - 3*x - 1 = 0"
+set xrange [-2:2]
+#set yrange [0:4]
+set samples 2000
+
+plot f(x) with lines lc rgb "blue",  g(x) with lines lc rgb "red"
+
+pause -1
