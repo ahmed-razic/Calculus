@@ -1,0 +1,14 @@
+f(x) = sqrt(x) + sqrt(x+1) - 4
+
+set terminal wxt
+
+set grid
+set xlabel "x"
+set ylabel "y"
+set xrange [0:4]
+#set yrange [0:4]
+set samples 2000
+
+plot f(x) with lines
+
+pause -1
