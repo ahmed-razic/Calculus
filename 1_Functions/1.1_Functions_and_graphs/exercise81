@@ -16,5 +16,4 @@ plot f(x) with lines lw 2 lc rgb "black", g(x) with lines lw 2 lc rgb "black", \
  f(x)/g(x) with lines, \
  g(x)/f(x) with lines
 
-
 pause -1
