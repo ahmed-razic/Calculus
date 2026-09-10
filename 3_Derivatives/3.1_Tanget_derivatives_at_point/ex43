@@ -1,0 +1,10 @@
+f(x) = 4*(abs(x))**0.4 - 2*x
+
+set terminal qt
+set grid
+set xtics 1
+set xrange [-5 : 5]
+set samples 3000
+
+plot f(x) with lines
+pause -1
