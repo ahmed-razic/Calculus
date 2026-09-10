@@ -1,0 +1,10 @@
+f(x) = sgn(x) * abs(x)**0.2
+
+set terminal qt
+set grid
+set xtics 1
+set xrange [-5 : 5]
+set samples 3000
+
+plot f(x) with lines
+pause -1
