@@ -1,0 +1,9 @@
+f(x) = (x <= 0 ? -sqrt(abs(x)) : sqrt(x))
+
+set grid
+set xtics 1
+set xrange [-5 : 5]
+set samples 3000
+
+plot f(x) with lines
+pause -1
