@@ -1,6 +1,5 @@
 f(x) = 4*(abs(x))**0.4 - 2*x
 
-set terminal qt
 set grid
 set xtics 1
 set xrange [-5 : 5]
