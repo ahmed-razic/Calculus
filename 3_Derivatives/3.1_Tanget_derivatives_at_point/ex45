@@ -1,0 +1,9 @@
+f(x) = (abs(x))**(2.0/3.0) - ((x - 1) < 0 ? -abs(x - 1)**(1.0/3.0) : abs(x - 1)**(1.0/3.0))
+
+set grid
+set xtics 1
+set xrange [-5 : 5]
+set samples 3000
+
+plot f(x) with lines
+pause -1
