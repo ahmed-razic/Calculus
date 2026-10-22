@@ -1,0 +1,12 @@
+f(x) = 2**(x+2)
+g(x) = 2**(x-2)
+
+set terminal qt
+set grid
+set xrange [-12 : -10]
+set yrange [-1 : 1]
+set samples 1000
+
+plot f(x) with lines, g(x) with lines
+
+pause -1
